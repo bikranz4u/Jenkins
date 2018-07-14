@@ -1,0 +1,11 @@
+# This will check the OS and depending up on the OS it will execute Command
+
+node {
+	stage('list directory') {
+		if (isUnix()) {
+		sh 'ls -al'
+		} else {
+			bat 'dir'
+		}
+	}
+}

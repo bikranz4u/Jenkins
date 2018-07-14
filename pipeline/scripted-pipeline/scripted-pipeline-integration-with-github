@@ -1,0 +1,11 @@
+#------------------Integration with github---------------
+# It will pull from Github and execute sh script.
+
+node {
+	stage('Checkout') {
+		git 'https://github.com/effectivejenkins/my-awesome-project.git'
+	}
+	stage ('Execution'){
+		sh "./say_hello.sh"
+	}
+}
